@@ -5,6 +5,7 @@ on:
       - main
     types:
       - open
+      - reopen
 jobs:
    generic-eas-preview:
     uses: bilwifi/gh-action-test/.github/workflows/generic-eas-preview.yml@main
