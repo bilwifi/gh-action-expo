@@ -30,14 +30,3 @@ jobs:
         uses: expo/expo-github-action/preview@v8
         with:
           command: eas update --auto
-      - name: 💬 Commentaire feedback 
-        uses: peter-evans/create-or-update-comment@v2
-        with:
-          token: ${{ secrets.PAT }}
-          #repository: ${{ github.event.client_payload.github.payload.repository.full_name }}
-          issue-number: ${{ github.event.number }}
-          reaction-type: "rocket"
-          body: |
-              > Un deploiment de prévisualisation est prêt ici : 
-              > ${{ steps.preview.outputs.qr }}
-              > runtimeVersion : ${{ steps.preview.outputs.runtimeVersion }}
