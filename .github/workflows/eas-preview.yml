@@ -3,5 +3,5 @@ on:
   pull_request:
 jobs:
    generic-eas-preview:
-    uses: bilwifi/gh-action-test/.github/workflows/generic-eas-preview.yml@main
+    uses: bilwifi/gh-action-test/.github/workflows/generic-npm-publish-github-pkg.yml@main
     secrets: inherit
