@@ -1,21 +1,37 @@
 {
   "name": "gh-action-expo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "eslint": "npx eslint ./src",
+    "release": "npx standard-version",
+    "release:minor": "npx standard-version --release-as minor",
+    "release:patch": "npx standard-version --release-as patch",
+    "release:major": "npx standard-version --release-as major"
   },
   "dependencies": {
+    "babel-plugin-inline-dotenv": "^1.7.0",
     "expo": "~47.0.12",
+    "expo-dev-client": "~2.0.1",
     "expo-status-bar": "~1.4.2",
     "react": "18.1.0",
-    "react-native": "0.70.5"
+    "react-native": "0.70.5",
+    "standard-version-expo": "^1.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
-  },
-  "private": true
+    "@babel/core": "^7.12.9",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-import": "^2.25.2",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.3.4",
+    "prettier": "^2.5.1"
+  }
 }
