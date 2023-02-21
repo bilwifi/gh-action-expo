@@ -7,5 +7,5 @@ on:
       - open
 jobs:
    generic-eas-preview:
-    uses: github.com/bilwifi/gh-action-test/.github/workflows/{generic-eas-preview.yml}@{main}
+    uses: github.com/bilwifi/gh-action-test/.github/workflows/generic-eas-preview.yml@main
     secrets: inherit
