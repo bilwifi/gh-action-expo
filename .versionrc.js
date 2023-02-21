@@ -13,11 +13,11 @@ module.exports = {
     },
     {
       filename: "app.json",
-      updater: require.resolve("standard-version-expo/android"),
+      updater: require.resolve("standard-version-expo/android/increment"),
     },
     {
       filename: "app.json",
-      updater: require.resolve("standard-version-expo/ios"),
+      updater: require.resolve("standard-version-expo/ios/increment"),
     },
   ],
   types: [

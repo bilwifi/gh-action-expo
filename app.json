@@ -12,14 +12,18 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/407813b7-9d9f-4ac7-a1f4-355c0c03e7b7"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
       "supportsTablet": true,
-      "buildNumber": "5"
+      "buildNumber": "5",
+      "runtimeVersion": {
+        "policy": "sdkVersion"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -27,7 +31,8 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.penieldialu.ghactionexpo",
-      "versionCode": 5
+      "versionCode": 5,
+      "runtimeVersion": "1.1.0-alpha.3"
     },
     "web": {
       "favicon": "./assets/favicon.png"
