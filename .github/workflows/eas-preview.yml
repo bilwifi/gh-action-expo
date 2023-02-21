@@ -2,6 +2,40 @@ name: 'Preview eas'
 on:
   pull_request:
 jobs:
-   generic-eas-preview:
-    uses: bilwifi/gh-action-test/.github/workflows/generic-eas-preview.yml@main
-    secrets: inherit
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v3
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: yarn
+
+      - name: 🏗 Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          expo-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🚀 Create preview
+        id: preview
+        uses: expo/expo-github-action/preview@v8
+        with:
+          command: eas update --auto
+      - name: 💬 Commentaire feedback 
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          token: ${{ secrets.PAT }}
+          #repository: ${{ github.event.client_payload.github.payload.repository.full_name }}
+          issue-number: ${{ github.event.number }}
+          reaction-type: "rocket"
+          body: |
+              > Un deploiment de prévisualisation est prêt ici : 
+              > ${{ steps.preview.outputs.qr }}
+              > runtimeVersion : ${{ steps.preview.outputs.runtimeVersion }}
