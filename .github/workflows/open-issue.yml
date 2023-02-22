@@ -1,0 +1,8 @@
+name: 'Open Issue traitement'
+on:
+    issues:
+        types: [opened]
+jobs:
+   generic-open-issue:
+    uses: bilwifi/gh-action-test/.github/workflows/generic-open-issue.yml@main
+    secrets: inherit
