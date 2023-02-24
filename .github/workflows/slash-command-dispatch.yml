@@ -1,0 +1,47 @@
+name: Slash Command Dispatch
+on:
+  issue_comment:
+    types: [created]
+jobs:
+  slashCommandDispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slash Command Dispatch
+        uses: peter-evans/slash-command-dispatch@v3
+        with:
+          token: ${{ secrets.PAT }}
+          reactions: "dispatched"
+          config: >
+             [
+                {
+                  "command": "help",
+                  "repository": "bilwifi/slash-command-processor",
+                  "event_type_suffix": "-command-app"
+                },
+                {
+                  "command": "start-pr",
+                  "repository": "bilwifi/slash-command-processor",
+                  "issue_type": "issue",
+                }
+                {
+                  "command": "upgrade-to-beta",
+                  "repository": "bilwifi/slash-command-processor",
+                  "issue_type": "issue",
+                  "static_args": [
+                    "branch=staging",
+                  ]
+                }
+                {
+                  "command": "updgrade-to-prod",
+                  "repository": "bilwifi/slash-command-processor",
+                  "issue_type": "issue",
+                  "static_args": [
+                    "branch=production",
+                  ]
+                }
+                {
+                  "command": "publish-preview",
+                  "repository": "bilwifi/slash-command-processor",
+                  "issue_type": "pull-request",
+                }
+              ]
