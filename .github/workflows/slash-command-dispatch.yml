@@ -17,5 +17,13 @@ jobs:
                   "command": "help",
                   "repository": "bilwifi/slash-command-processor",
                   "event_type_suffix": "-command-app"
+                },
+                {
+                  "command": "upgrade-to-beta",
+                  "repository": "bilwifi/slash-command-processor",
+                  "issue_type": "issue",
+                  "static_args": [
+                    "branch=staging"
+                  ]
                 }
               ]
