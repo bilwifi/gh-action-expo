@@ -28,7 +28,7 @@ jobs:
                   "repository": "bilwifi/slash-command-processor",
                   "issue_type": "issue",
                   "static_args": [
-                    "branch=staging",
+                    "branch=staging"
                   ]
                 },
                 {
@@ -36,7 +36,7 @@ jobs:
                   "repository": "bilwifi/slash-command-processor",
                   "issue_type": "issue",
                   "static_args": [
-                    "branch=production",
+                    "branch=production"
                   ]
                 },
                 {
