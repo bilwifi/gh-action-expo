@@ -12,7 +12,9 @@
     "release:minor": "npx standard-version --release-as minor",
     "release:patch": "npx standard-version --release-as patch",
     "release:major": "npx standard-version --release-as major",
-    "update-rv": "sh cmd/runtimeVersion.sh"
+    "update-rv": "sh cmd/runtimeVersion.sh",
+    "semver" : "semver"
+
   },
   "dependencies": {
     "babel-plugin-inline-dotenv": "^1.7.0",
@@ -35,6 +37,7 @@
     "jest": "^27.5.1",
     "lint-staged": "^12.3.4",
     "prettier": "^2.5.1",
+    "semver": "^7.3.8",
     "standard-version": "^7.1.0",
     "standard-version-expo-2": "^1.2.1"
   }
