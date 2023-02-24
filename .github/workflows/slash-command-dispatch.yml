@@ -21,8 +21,8 @@ jobs:
                 {
                   "command": "start-pr",
                   "repository": "bilwifi/slash-command-processor",
-                  "issue_type": "issue",
-                }
+                  "issue_type": "issue"
+                },
                 {
                   "command": "upgrade-to-beta",
                   "repository": "bilwifi/slash-command-processor",
@@ -30,7 +30,7 @@ jobs:
                   "static_args": [
                     "branch=staging",
                   ]
-                }
+                },
                 {
                   "command": "updgrade-to-prod",
                   "repository": "bilwifi/slash-command-processor",
@@ -38,7 +38,7 @@ jobs:
                   "static_args": [
                     "branch=production",
                   ]
-                }
+                },
                 {
                   "command": "publish-preview",
                   "repository": "bilwifi/slash-command-processor",
