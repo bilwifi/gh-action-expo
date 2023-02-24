@@ -9,15 +9,15 @@ module.exports = {
     },
     {
       filename: "app.json",
-      updater: require.resolve("standard-version-expo"),
+      updater: require.resolve("standard-version-expo-2"),
     },
     {
       filename: "app.json",
-      updater: require.resolve("standard-version-expo/android/increment"),
+      updater: require.resolve("standard-version-expo-2/android/code-with-prerelease"),
     },
     {
       filename: "app.json",
-      updater: require.resolve("standard-version-expo/ios/increment"),
+      updater: require.resolve("standard-version-expo-2/ios/code-with-prerelease"),
     },
   ],
   types: [
