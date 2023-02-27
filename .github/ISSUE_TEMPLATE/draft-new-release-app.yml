@@ -17,6 +17,13 @@ body:
               - Majeur
       validations:
           required: true
+    - type: checkboxes
+      id: is-increment-runtime-version
+      attributes:
+          label: --RuntimeVersion--
+          description: "🚨 UNIQUEMENT POUR LES APPLICATIONS EXPO🚨 \n\nSi vous activez cette option, les versions précédentes de builds ne bénéficieront plus des mises à jour eas update de cette nouvelle version. \nvoir [Runtime version](https://docs.expo.dev/eas-update/runtime-versions/)"
+          options:
+              - label: Incrementer
     - type: textarea
       id: description
       attributes:
