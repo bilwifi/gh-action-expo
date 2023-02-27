@@ -14,4 +14,5 @@ jobs:
     uses: bilwifi/gh-action-test/.github/workflows/generic-standard-version-branch-rules.yml@main
     with: 
       isPackage: false
+      isAppExpo: true
     secrets: inherit
