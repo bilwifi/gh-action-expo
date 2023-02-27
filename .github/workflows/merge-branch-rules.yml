@@ -23,9 +23,8 @@ jobs:
     if: |
         github.event.pull_request.merged == true &&
         (contains(github.event.issue.labels.*.name, 'build') || 
-        contains(github.event.issue.labels.*.name, 'increment-runtime-version' ||
-        contains(github.event.issue.labels.*.name, 'runtime-version-changed'
-        ))
+        contains(github.event.issue.labels.*.name, 'increment-runtime-version') ||
+        contains(github.event.issue.labels.*.name, 'runtime-version-changed'))
     uses: bilwifi/gh-action-test/.github/workflows/generic-eas-build.yml@main
     with: 
       main: ${{ github.event.pull_request.base.ref }}
