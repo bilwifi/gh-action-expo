@@ -75,5 +75,5 @@ module.exports = {
   commitUrlFormat: "https://github.com/bilwifi/gh-action-expo/commit/{{hash}}",
   compareUrlFormat:
     "https://github.com/bilwifi/gh-action-expo/compare/{{previousTag}}...{{currentTag}}",
-  releaseCommitMessageFormat: "(bump): version {{previousTag}} → {{currentTag}} [no ci]",
+  releaseCommitMessageFormat: "(bump): version {{currentTag}} [no ci]",
 };
