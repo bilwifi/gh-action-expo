@@ -20,10 +20,10 @@ body:
     - type: checkboxes
       id: is-increment-runtime-version
       attributes:
-          label: Incrémenter le Runtime Version
+          label: --RuntimeVersion--
           description: Si vous activez cette option, les versions précédentes de builds ne bénéficieront plus des mises à jour eas update de cette nouvelle version. voir [Runtime version](https://docs.expo.dev/eas-update/runtime-versions/)
           options:
-              - label: Oui,Incrementer le Runtime version
+              - label: Incrementer
     - type: textarea
       id: description
       attributes:
