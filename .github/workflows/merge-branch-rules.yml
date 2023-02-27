@@ -1,0 +1,15 @@
+name: "Merge branch rules"
+
+on:
+  pull_request:
+    branches:
+      - main
+      - staging
+      - "release/*"
+    types:
+      - closed
+jobs:
+  generic-merge-branch-rules:
+    if: github.event.pull_request.merged == true
+    uses: bilwifi/gh-action-test/.github/workflows/generic-standard-version-branch-rules.yml@main
+    secrets: inherit
