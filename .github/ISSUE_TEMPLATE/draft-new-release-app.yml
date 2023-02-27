@@ -17,6 +17,13 @@ body:
               - Majeur
       validations:
           required: true
+    - type: checkboxes
+      id: is-increment-runtime-version
+      attributes:
+          label: Incrémenter le Runtime Version
+          description: Si vous activez cette option, les versions précédentes de builds ne bénéficieront plus des mises à jour eas update. voir [Runtime version](https://docs.expo.dev/eas-update/runtime-versions/)
+          options:
+              - label: Oui,Incrementer le Runtime version
     - type: textarea
       id: description
       attributes:
