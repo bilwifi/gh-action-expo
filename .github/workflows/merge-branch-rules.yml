@@ -27,7 +27,7 @@ jobs:
         contains(github.event.issue.labels.*.name, 'runtime-version-changed'))
     uses: bilwifi/gh-action-test/.github/workflows/generic-eas-build.yml@main
     with: 
-      main: ${{ github.event.pull_request.base.ref }}
+      branch: ${{ github.event.pull_request.base.ref }}
       submit: ${{contains(github.event.issue.labels.*.name, 'submit-app-to-market')}}
     secrets: inherit
   publish-app:
