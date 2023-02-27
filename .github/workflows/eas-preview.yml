@@ -1,6 +1,10 @@
 name: 'Preview eas'
 on:
   pull_request:
+    branches:
+      - check
+      #- staging
+      #- "release/*"
 jobs:
   preview:
     runs-on: ubuntu-latest
