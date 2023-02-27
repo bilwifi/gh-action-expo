@@ -21,7 +21,7 @@ body:
       id: is-increment-runtime-version
       attributes:
           label: --RuntimeVersion--
-          description: "🚨 UNIQUMENT POUR LES APP EXPO🚨 : \nSi vous activez cette option, les versions précédentes de builds ne bénéficieront plus des mises à jour eas update de cette nouvelle version. voir [Runtime version](https://docs.expo.dev/eas-update/runtime-versions/)"
+          description: "🚨 UNIQUMENT POUR LES APP EXPO🚨 \n\nSi vous activez cette option, les versions précédentes de builds ne bénéficieront plus des mises à jour eas update de cette nouvelle version. \nvoir [Runtime version](https://docs.expo.dev/eas-update/runtime-versions/)"
           options:
               - label: Incrementer
     - type: textarea
