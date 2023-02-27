@@ -33,7 +33,7 @@ jobs:
   publish-app:
     needs: standard-version
     if: github.event.pull_request.merged == true
-    uses: bilwifi/gh-action-test/.github/workflows/generic-eas-build.yml@main
+    uses: bilwifi/gh-action-test/.github/workflows/generic-eas-update.yml@main
     with: 
       branch: ${{ github.event.pull_request.base.ref }}
       env: "production"
