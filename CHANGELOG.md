@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## 1.2.0-beta.0 (2023-02-27)
 
+## [1.2.0-alpha.0](https://github.com/bilwifi/gh-action-expo/compare/v1.2.0-beta.0...v1.2.0-alpha.0) (2023-02-27)
+
+## 1.2.0-beta.0 (2023-02-27)
+
 ## 1.2.0-alpha.8 (2023-02-27)
 
 ## 1.2.0-alpha.7 (2023-02-27)
