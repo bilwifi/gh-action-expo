@@ -1,0 +1,39 @@
+name: "Check Runtime version Expo"
+
+on:
+  pull_request:
+    branches:
+      - production
+      - staging
+      - "release/*"
+    types:
+      - open
+jobs:
+  check-runtime-version:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Récuperer le repository
+          uses: actions/checkout@v3
+        - name: Récuperer le runtime version de la branche de base
+          id: check-runtime-version
+          run: |
+            git fetch
+            git checkout ${{github.event.pull_request.base.ref}}; 
+            runtimeVersionBase=$(jq .expo.runtimeVersion app.json); 
+            git checkout ${{github.event.pull_request.head.ref}}; 
+            runtimeVersionHead=$(jq .expo.runtimeVersion app.json);
+            if [ "$runtimeVersionBase" = "runtimeVersionHead" ]
+                then
+                    echo "isChange=false" >> $GITHUB_ENV
+                else
+                    echo "isChange=true" >> $GITHUB_ENV
+                fi
+        - name: Ajout de label runtime-version-changed
+          if: steps.check-runtime-version.outputs.isChange
+          uses: actions-cool/issues-helper@v3
+          with:
+            actions: 'add-labels'
+            token: ${{ secrets.GITHUB_TOKEN }}
+            issue-number: ${{ github.event.issue.number }}
+            labels: 'runtime-version-changed' 
+
