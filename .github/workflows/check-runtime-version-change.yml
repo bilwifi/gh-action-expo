@@ -12,7 +12,7 @@ on:
 jobs:
   check-runtime-version:
       runs-on: ubuntu-latest
-      if: ${{ !contains(github.event.issue.labels.*.name, 'increment-runtime-version') && !contains(github.event.issue.labels.*.name, 'runtime-version-changed')}}
+      if: ${{ !contains(github.event.pull_request.labels.*.name, 'increment-runtime-version') && !contains(github.event.pull_request.labels.*.name, 'runtime-version-changed')}}
       steps:
         - name: Récuperer le repository
           uses: actions/checkout@v3
