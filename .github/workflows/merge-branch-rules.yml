@@ -12,4 +12,7 @@ jobs:
   generic-merge-branch-rules:
     if: github.event.pull_request.merged == true
     uses: bilwifi/gh-action-test/.github/workflows/generic-standard-version-branch-rules.yml@main
+    with: 
+      isPackage: false
+      isAppExpo: true
     secrets: inherit
