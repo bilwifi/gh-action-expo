@@ -10,11 +10,31 @@ on:
     types:
       - closed
 jobs:
-  generic-merge-branch-rules:
+  standard-version:
     if: github.event.pull_request.merged == true
     uses: bilwifi/gh-action-test/.github/workflows/generic-standard-version-branch-rules.yml@main
     with: 
       main: "production"
       isPackage: false
       isAppExpo: true
+    secrets: inherit
+  build-app:
+    needs: standard-version
+    if: |
+        github.event.pull_request.merged == true &&
+        (contains(github.event.issue.labels.*.name, 'build') || 
+        contains(github.event.issue.labels.*.name, 'increment-runtime-version') ||
+        contains(github.event.issue.labels.*.name, 'runtime-version-changed'))
+    uses: bilwifi/gh-action-test/.github/workflows/generic-eas-build.yml@main
+    with: 
+      branch: ${{ github.event.pull_request.base.ref }}
+      submit: ${{contains(github.event.issue.labels.*.name, 'submit-app-to-market')}}
+    secrets: inherit
+  publish-app:
+    needs: standard-version
+    if: github.event.pull_request.merged == true
+    uses: bilwifi/gh-action-test/.github/workflows/generic-eas-update.yml@main
+    with: 
+      branch: ${{ github.event.pull_request.base.ref }}
+      env: "production"
     secrets: inherit
