@@ -2,7 +2,7 @@
   "expo": {
     "name": "gh-action-expo",
     "slug": "gh-action-expo",
-    "version": "1.2.0-alpha.8",
+    "version": "1.2.0-alpha.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -20,7 +20,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "buildNumber": "10200108"
+      "buildNumber": "10200100"
     },
     "android": {
       "adaptiveIcon": {
@@ -28,7 +28,7 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.penieldialu.ghactionexpo",
-      "versionCode": 10200108
+      "versionCode": 10200100
     },
     "web": {
       "favicon": "./assets/favicon.png"
